@@ -14,6 +14,12 @@
 		0A6C84D124C2D39F00783941 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A6C84D024C2D39F00783941 /* Assets.xcassets */; };
 		0A6C84D424C2D39F00783941 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A6C84D224C2D39F00783941 /* LaunchScreen.storyboard */; };
 		0A6C84DF24C2D39F00783941 /* LLYMonkeyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C84DE24C2D39F00783941 /* LLYMonkeyUITests.swift */; };
+		0A90A0AD24CD581B0054DB57 /* LMVideoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90A0AC24CD581B0054DB57 /* LMVideoSource.swift */; };
+		0A90A0AF24CD582D0054DB57 /* LMAudioSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90A0AE24CD582D0054DB57 /* LMAudioSource.swift */; };
+		0A90A0B124CD59430054DB57 /* LMAVSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90A0B024CD59430054DB57 /* LMAVSource.swift */; };
+		0A90A0B324CD60CD0054DB57 /* LMAssertWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90A0B224CD60CD0054DB57 /* LMAssertWriter.swift */; };
+		0A90A0B724CD61AA0054DB57 /* LMVideoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90A0B624CD61AA0054DB57 /* LMVideoWriter.swift */; };
+		0A90A0B924CD75250054DB57 /* LMAudioWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90A0B824CD75250054DB57 /* LMAudioWriter.swift */; };
 		0A9C2CB724C2F20F00EA6D34 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9C2CB624C2F20F00EA6D34 /* AVFoundation.framework */; };
 		0A9C2CBA24C2F3CF00EA6D34 /* LMRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C2CB924C2F3CF00EA6D34 /* LMRecordView.swift */; };
 		0A9C2CBF24C31B4C00EA6D34 /* PAirSandbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9C2CBD24C31B4C00EA6D34 /* PAirSandbox.m */; };
@@ -42,6 +48,12 @@
 		0A6C84DA24C2D39F00783941 /* LLYMonkeyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LLYMonkeyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6C84DE24C2D39F00783941 /* LLYMonkeyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLYMonkeyUITests.swift; sourceTree = "<group>"; };
 		0A6C84E024C2D39F00783941 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A90A0AC24CD581B0054DB57 /* LMVideoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMVideoSource.swift; sourceTree = "<group>"; };
+		0A90A0AE24CD582D0054DB57 /* LMAudioSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMAudioSource.swift; sourceTree = "<group>"; };
+		0A90A0B024CD59430054DB57 /* LMAVSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMAVSource.swift; sourceTree = "<group>"; };
+		0A90A0B224CD60CD0054DB57 /* LMAssertWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMAssertWriter.swift; sourceTree = "<group>"; };
+		0A90A0B624CD61AA0054DB57 /* LMVideoWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMVideoWriter.swift; sourceTree = "<group>"; };
+		0A90A0B824CD75250054DB57 /* LMAudioWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMAudioWriter.swift; sourceTree = "<group>"; };
 		0A9C2CB624C2F20F00EA6D34 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0A9C2CB924C2F3CF00EA6D34 /* LMRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMRecordView.swift; sourceTree = "<group>"; };
 		0A9C2CBD24C31B4C00EA6D34 /* PAirSandbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAirSandbox.m; sourceTree = "<group>"; };
@@ -126,6 +138,12 @@
 			isa = PBXGroup;
 			children = (
 				0A9C2CB924C2F3CF00EA6D34 /* LMRecordView.swift */,
+				0A90A0AC24CD581B0054DB57 /* LMVideoSource.swift */,
+				0A90A0AE24CD582D0054DB57 /* LMAudioSource.swift */,
+				0A90A0B024CD59430054DB57 /* LMAVSource.swift */,
+				0A90A0B224CD60CD0054DB57 /* LMAssertWriter.swift */,
+				0A90A0B624CD61AA0054DB57 /* LMVideoWriter.swift */,
+				0A90A0B824CD75250054DB57 /* LMAudioWriter.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -242,10 +260,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A9C2CBA24C2F3CF00EA6D34 /* LMRecordView.swift in Sources */,
+				0A90A0AD24CD581B0054DB57 /* LMVideoSource.swift in Sources */,
+				0A90A0B124CD59430054DB57 /* LMAVSource.swift in Sources */,
+				0A90A0B324CD60CD0054DB57 /* LMAssertWriter.swift in Sources */,
+				0A90A0AF24CD582D0054DB57 /* LMAudioSource.swift in Sources */,
 				0A9C2CC624C3240D00EA6D34 /* LMAirSandbox.swift in Sources */,
+				0A90A0B724CD61AA0054DB57 /* LMVideoWriter.swift in Sources */,
 				0A9C2CBF24C31B4C00EA6D34 /* PAirSandbox.m in Sources */,
 				0A6C84CC24C2D39D00783941 /* ViewController.swift in Sources */,
 				0A6C84C824C2D39D00783941 /* AppDelegate.swift in Sources */,
+				0A90A0B924CD75250054DB57 /* LMAudioWriter.swift in Sources */,
 				0A6C84CA24C2D39D00783941 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
