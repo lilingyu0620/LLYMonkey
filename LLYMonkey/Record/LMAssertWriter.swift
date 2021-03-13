@@ -42,7 +42,7 @@ class LMAssertWriter: NSObject {
         return fileUrl
     }
     
-    func addTrack(sourceFormatDescription: CMFormatDescription, settings:[String: Any]?) {
+    func addTrack(sourceFormatDescription: CMFormatDescription, settings:[String: Any]? = nil) {
         self.avTrackSourceFormatDescription = sourceFormatDescription
         self.avInputSetting = settings
     }

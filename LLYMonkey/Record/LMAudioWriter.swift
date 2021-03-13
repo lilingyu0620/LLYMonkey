@@ -67,7 +67,7 @@ class LMAudioWriter: LMAssertWriter {
                             return
                         }
                         let writer = try AVAssetWriter(outputURL: url, fileType: .mov)
-                        writer.movieFragmentInterval = CMTimeMakeWithSeconds(1.0, preferredTimescale: 1000)
+                        writer.movieFragmentInterval = CMTimeMakeWithSeconds(1.0, preferredTimescale: 600)
                         self?.avAssetWriter = writer
                         self?.setupAudioInput()
                     }

@@ -8,18 +8,35 @@
 
 import UIKit
 import AVFoundation
+import CoreImage
 
 class LMVideoWriter: LMAssertWriter {
     
     let writeQueue = DispatchQueue(label: "com.llymonkey.videowrite.queue")
     let fileName : String
+    var assetWriteInputPixelBufferAdaptor : AVAssetWriterInputPixelBufferAdaptor?
+    let ciContext : CIContext
+    var ciFilter : CIFilter
+    var colorSapce : CGColorSpace
     
     init(with fileName:String) {
         
         self.fileName = fileName
         
+        self.ciContext = LMContextManager.shareInstance.ciContext
+        
+        self.ciFilter = LMPhotoFilters.shared.defaultFilter()!
+        
+        self.colorSapce = CGColorSpaceCreateDeviceRGB()
+        
         super.init()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(filterChange), name: NSNotification.Name(rawValue: LMPhotoFilters.FilterChangeNotification), object: nil)
+        
+    }
+    
+    @objc func filterChange(notification : Notification) {
+        self.ciFilter = notification.object as! CIFilter
     }
     
     func setupVideoInput() {
@@ -43,6 +60,12 @@ class LMVideoWriter: LMAssertWriter {
        assetWriter.add(videoInput)
        
        self.avInput = videoInput
+        
+        if let input = self.avInput {
+            
+            self.assetWriteInputPixelBufferAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: input, sourcePixelBufferAttributes: pixelBufferAdaptorAttributes())
+            
+        }
        
     }
     
@@ -68,7 +91,7 @@ class LMVideoWriter: LMAssertWriter {
                     if strongSelf.avTrackSourceFormatDescription != nil {
                         let url = strongSelf.pathForAsset(with: "\(strongSelf.fileName).mov")
                         let writer = try AVAssetWriter(outputURL: url, fileType: .mov)
-                        writer.movieFragmentInterval = CMTimeMakeWithSeconds(1.0, preferredTimescale: 1000)
+                        writer.movieFragmentInterval = CMTimeMakeWithSeconds(1.0, preferredTimescale: 600)
                         strongSelf.avAssetWriter = writer
                         strongSelf.setupVideoInput()
                     }
@@ -130,12 +153,55 @@ class LMVideoWriter: LMAssertWriter {
                     return
                 }
                 
-                let success = avInput.append(sampleBuffer)
-                if success {
-                    print("video append success")
+                var outputRenderBuffer : CVPixelBuffer?
+                
+                // 加滤镜
+                if let pixelBufferPool = self?.assetWriteInputPixelBufferAdaptor?.pixelBufferPool {
+                    
+                    CVPixelBufferPoolCreatePixelBuffer(kCFAllocatorDefault, pixelBufferPool, &outputRenderBuffer)
+                    
+                    if let imgBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
+                        
+                        let sourceImage = CIImage.init(cvPixelBuffer: imgBuffer, options: nil)
+                        
+                        self?.ciFilter.setValue(sourceImage, forKey: kCIInputImageKey)
+                        
+                        var filterImage = self?.ciFilter.outputImage
+                        
+                        if let _ = filterImage {
+                        }
+                        else {
+                            filterImage = sourceImage
+                        }
+                        
+                        if let filterImg = filterImage,let buffer = outputRenderBuffer {
+                            
+                            self?.ciContext.render(filterImg, to: buffer, bounds: filterImg.extent, colorSpace: self?.colorSapce)
+                            
+                            let success = self?.assetWriteInputPixelBufferAdaptor?.append(buffer, withPresentationTime: CMSampleBufferGetPresentationTimeStamp(sampleBuffer))
+                            
+                            if let s = success, s == true {
+                                print("filter video append success")
+                            }
+                            else {
+                                print("filter video append fail")
+                            }
+
+                            
+                        }
+                    }
+                    
                 }
                 else {
-                    print("audio append fail")
+                 
+                    let success = avInput.append(sampleBuffer)
+                    if success {
+                        print("video append success")
+                    }
+                    else {
+                        print("video append fail")
+                    }
+                    
                 }
             })
             
@@ -210,6 +276,21 @@ class LMVideoWriter: LMAssertWriter {
         ] as [String: Any]
         
         return videoSetting
+    }
+    
+    private func pixelBufferAdaptorAttributes() -> [String:Any] {
+        
+        guard let formatDescription = self.avTrackSourceFormatDescription else {
+            return [:]
+        }
+        
+        let dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription)
+        let attributes = [kCVPixelBufferPixelFormatTypeKey as String : kCVPixelFormatType_32BGRA,
+                          kCVPixelBufferWidthKey as String : dimensions.width,
+                          kCVPixelBufferHeightKey as String : dimensions.height,
+                          kCVPixelFormatOpenGLESCompatibility as String : kCFBooleanTrue!] as [String : Any]
+        return attributes
+        
     }
 
 }

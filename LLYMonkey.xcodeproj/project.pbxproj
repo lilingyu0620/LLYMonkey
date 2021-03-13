@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1053ED25DE8221009EA7C8 /* LMPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1053EC25DE8221009EA7C8 /* LMPreviewViewController.swift */; };
+		0A1053F125DE8F61009EA7C8 /* LMCompositionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1053F025DE8F61009EA7C8 /* LMCompositionBuilder.swift */; };
+		0A1053F625DE91C0009EA7C8 /* LMTimelineItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1053F525DE91C0009EA7C8 /* LMTimelineItem.swift */; };
+		0A1053FC25DE9340009EA7C8 /* LMMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1053FB25DE9340009EA7C8 /* LMMediaItem.swift */; };
+		0A10540025DEA1F6009EA7C8 /* LMBaseComposition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1053FF25DEA1F6009EA7C8 /* LMBaseComposition.swift */; };
+		0A10540425DF5FAB009EA7C8 /* LMPlaybackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10540325DF5FAB009EA7C8 /* LMPlaybackView.swift */; };
+		0A10540825DF97BD009EA7C8 /* LMCompositionExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10540725DF97BD009EA7C8 /* LMCompositionExporter.swift */; };
+		0A10540E25DFB4B2009EA7C8 /* LMContextManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10540D25DFB4B2009EA7C8 /* LMContextManager.swift */; };
+		0A10541225DFB752009EA7C8 /* LMPhotoFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10541125DFB752009EA7C8 /* LMPhotoFilters.swift */; };
+		0A10541825DFCDE2009EA7C8 /* LMPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10541725DFCDE2009EA7C8 /* LMPreviewView.swift */; };
+		0A10541C25DFE1DC009EA7C8 /* LMFilterSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A10541B25DFE1DC009EA7C8 /* LMFilterSelectorView.swift */; };
 		0A6C84C824C2D39D00783941 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C84C724C2D39D00783941 /* AppDelegate.swift */; };
 		0A6C84CA24C2D39D00783941 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C84C924C2D39D00783941 /* SceneDelegate.swift */; };
 		0A6C84CC24C2D39D00783941 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6C84CB24C2D39D00783941 /* ViewController.swift */; };
@@ -37,6 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A1053EC25DE8221009EA7C8 /* LMPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMPreviewViewController.swift; sourceTree = "<group>"; };
+		0A1053F025DE8F61009EA7C8 /* LMCompositionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMCompositionBuilder.swift; sourceTree = "<group>"; };
+		0A1053F525DE91C0009EA7C8 /* LMTimelineItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMTimelineItem.swift; sourceTree = "<group>"; };
+		0A1053FB25DE9340009EA7C8 /* LMMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMMediaItem.swift; sourceTree = "<group>"; };
+		0A1053FF25DEA1F6009EA7C8 /* LMBaseComposition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMBaseComposition.swift; sourceTree = "<group>"; };
+		0A10540325DF5FAB009EA7C8 /* LMPlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMPlaybackView.swift; sourceTree = "<group>"; };
+		0A10540725DF97BD009EA7C8 /* LMCompositionExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMCompositionExporter.swift; sourceTree = "<group>"; };
+		0A10540D25DFB4B2009EA7C8 /* LMContextManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMContextManager.swift; sourceTree = "<group>"; };
+		0A10541125DFB752009EA7C8 /* LMPhotoFilters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMPhotoFilters.swift; sourceTree = "<group>"; };
+		0A10541725DFCDE2009EA7C8 /* LMPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMPreviewView.swift; sourceTree = "<group>"; };
+		0A10541B25DFE1DC009EA7C8 /* LMFilterSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMFilterSelectorView.swift; sourceTree = "<group>"; };
 		0A6C84C424C2D39D00783941 /* LLYMonkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LLYMonkey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A6C84C724C2D39D00783941 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A6C84C924C2D39D00783941 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +103,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A1051E425DE526C009EA7C8 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				0A1053EC25DE8221009EA7C8 /* LMPreviewViewController.swift */,
+				0A1053F025DE8F61009EA7C8 /* LMCompositionBuilder.swift */,
+				0A10540325DF5FAB009EA7C8 /* LMPlaybackView.swift */,
+				0A10540725DF97BD009EA7C8 /* LMCompositionExporter.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		0A1053F425DE916B009EA7C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A1053F525DE91C0009EA7C8 /* LMTimelineItem.swift */,
+				0A1053FB25DE9340009EA7C8 /* LMMediaItem.swift */,
+				0A1053FF25DEA1F6009EA7C8 /* LMBaseComposition.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A10540C25DFB477009EA7C8 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				0A10540D25DFB4B2009EA7C8 /* LMContextManager.swift */,
+				0A10541125DFB752009EA7C8 /* LMPhotoFilters.swift */,
+				0A10541B25DFE1DC009EA7C8 /* LMFilterSelectorView.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		0A6C84BB24C2D39D00783941 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +156,9 @@
 		0A6C84C624C2D39D00783941 /* LLYMonkey */ = {
 			isa = PBXGroup;
 			children = (
+				0A10540C25DFB477009EA7C8 /* Filter */,
+				0A1053F425DE916B009EA7C8 /* Models */,
+				0A1051E425DE526C009EA7C8 /* Preview */,
 				0A9C2CBC24C31B4C00EA6D34 /* SandboxBrowser */,
 				0A9C2CB824C2F34700EA6D34 /* Record */,
 				0A6C84C724C2D39D00783941 /* AppDelegate.swift */,
@@ -144,6 +200,7 @@
 				0A90A0B224CD60CD0054DB57 /* LMAssertWriter.swift */,
 				0A90A0B624CD61AA0054DB57 /* LMVideoWriter.swift */,
 				0A90A0B824CD75250054DB57 /* LMAudioWriter.swift */,
+				0A10541725DFCDE2009EA7C8 /* LMPreviewView.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -262,14 +319,25 @@
 				0A9C2CBA24C2F3CF00EA6D34 /* LMRecordView.swift in Sources */,
 				0A90A0AD24CD581B0054DB57 /* LMVideoSource.swift in Sources */,
 				0A90A0B124CD59430054DB57 /* LMAVSource.swift in Sources */,
+				0A10541225DFB752009EA7C8 /* LMPhotoFilters.swift in Sources */,
 				0A90A0B324CD60CD0054DB57 /* LMAssertWriter.swift in Sources */,
 				0A90A0AF24CD582D0054DB57 /* LMAudioSource.swift in Sources */,
+				0A10540E25DFB4B2009EA7C8 /* LMContextManager.swift in Sources */,
+				0A1053ED25DE8221009EA7C8 /* LMPreviewViewController.swift in Sources */,
 				0A9C2CC624C3240D00EA6D34 /* LMAirSandbox.swift in Sources */,
+				0A10540825DF97BD009EA7C8 /* LMCompositionExporter.swift in Sources */,
+				0A10541825DFCDE2009EA7C8 /* LMPreviewView.swift in Sources */,
 				0A90A0B724CD61AA0054DB57 /* LMVideoWriter.swift in Sources */,
+				0A10540425DF5FAB009EA7C8 /* LMPlaybackView.swift in Sources */,
+				0A1053FC25DE9340009EA7C8 /* LMMediaItem.swift in Sources */,
 				0A9C2CBF24C31B4C00EA6D34 /* PAirSandbox.m in Sources */,
+				0A1053F125DE8F61009EA7C8 /* LMCompositionBuilder.swift in Sources */,
+				0A10540025DEA1F6009EA7C8 /* LMBaseComposition.swift in Sources */,
 				0A6C84CC24C2D39D00783941 /* ViewController.swift in Sources */,
 				0A6C84C824C2D39D00783941 /* AppDelegate.swift in Sources */,
+				0A10541C25DFE1DC009EA7C8 /* LMFilterSelectorView.swift in Sources */,
 				0A90A0B924CD75250054DB57 /* LMAudioWriter.swift in Sources */,
+				0A1053F625DE91C0009EA7C8 /* LMTimelineItem.swift in Sources */,
 				0A6C84CA24C2D39D00783941 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
