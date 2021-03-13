@@ -73,7 +73,7 @@ class LMRecordView: UIView {
     
     
     lazy var filterSelectedView : LMFilterSelectorView = {
-        let view = LMFilterSelectorView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UI.filterViewHeight))
+        let view = LMFilterSelectorView(frame: CGRect(x: 0, y: LMRecordView.isIphoneX() ? 24 : 0, width: UIScreen.main.bounds.width, height: UI.filterViewHeight))
         return view
     }()
     
@@ -284,6 +284,10 @@ class LMRecordView: UIView {
         
         segmentBar.path = segmentBarPath
         
+    }
+    
+    class func isIphoneX() -> Bool {
+        return UIScreen.main.bounds.height >= 812
     }
     
 }
